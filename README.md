@@ -8,7 +8,7 @@ pip3 install django
 
 Next: Run this command to start the project
 ```Shell
-django-admin startproject my_todo
+django-admin startproject todo_project
 ```
 This will create a project with some pre made files in it.
 
@@ -37,6 +37,6 @@ It is automatically created when you start a new Django project using the `djang
 
 Next: Run this command to create the app
 ```Shell
-python3 manage.py startapp to_do
+python3 manage.py startapp todo_app
 ```
 
