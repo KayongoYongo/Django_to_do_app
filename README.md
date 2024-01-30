@@ -1,11 +1,12 @@
 # Django_to_do_app
 A simple to do app without sign up and log in
 
+# 1. Getting started
 To get started, type this in the command line:
 ```Shell
 pip3 install django
 ```
-
+# 2. Create a project
 Next: Run this command to start the project
 ```Shell
 django-admin startproject todo_project
@@ -16,15 +17,6 @@ Each file has a purpose.
 1. `__init__.py`- This file tells python to treat the directory like a package.
 2. `wsgi.py` and `asgi.py` are specifications for how web servers and web applications communicate in Python.
    They define a standard interface that allows web servers to communicate with web applications or frameworks.
-   
-# WSGI (Web Server Gateway Interface):
-Purpose: WSGI is designed for traditional synchronous web applications. 
-It provides a standardized interface between web servers and Python web applications, allowing them to work together seamlessly.
-
-# ASGI (Asynchronous Server Gateway Interface):
-Purpose: ASGI is designed to support asynchronous web applications.
-It allows for more efficient handling of concurrent connections and facilitates the use of asynchronous programming features.
-
 3. `settings.py` serves the crucial purpose of containing various configuration settings for the Django web application.
 It's a Python module where you can specify settings such as database configurations, timezone, static files settings, middleware, 
 installed applications, and more. This file acts as a central configuration hub for your Django project.
@@ -35,8 +27,42 @@ It acts as a map that connects specific URLs to corresponding views or actions w
 5. `manage.py` is a command-line utility in Django that provides a convenient way to interact with various aspects of a Django project. 
 It is automatically created when you start a new Django project using the `django-admin startproject`
 
+# 3. Create an app
 Next: Run this command to create the app
 ```Shell
 python3 manage.py startapp todo_app
 ```
+Each file has a purpose:
+1. `admin.py`  in a Django app is used to register models with the Django admin interface, allowing easy and customizable management of database records through the admin site.
+2. `apps.py` in a Django app is used to define application-specific configurations, such as the app's name, label, and any application-related signals or ready methods.
+3. `models.py` in a Django app is used to define the data models or database schema for the application, specifying the structure of tables and relationships between them.
+4. `tests.py` in a Django app is used for writing unit tests to ensure the functionality of the app. 
+    It allows developers to test various aspects of the application, including models, views, forms, and more.
+5. `views.py` in a Django app is used to define the views or functions/classes that handle HTTP requests and return HTTP responses.
+Views determine what content is displayed on a webpage and interact with models and templates to render dynamic content.
+
+# 4. Link the application to the Django project
+To do this, navigate to the directory:
+```Shell
+vagrant@ubuntu-focal:~/PP-django_to_do_app/todo_project/todo_project$ ls
+__init__.py  __pycache__  asgi.py  settings.py  urls.py  wsgi.py
+```
+then, open `settings.py`.
+
+Scroll down to the blck showing Installed applications then add the name of the app.
+```Python3
+# Application definition
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    "todo_app"
+]
+```
+This will allow the django application to view any of the code we put in the app.
+
 
