@@ -6,9 +6,9 @@ To get started, type this in the command line:
 pip3 install django
 ```
 
-Next: create the actual django app
+Next: Run this command to start the project
 ```Shell
-django-admin startproject to_do_app
+django-admin startproject my_todo
 ```
 This will create a project with some pre made files in it.
 
@@ -33,4 +33,10 @@ installed applications, and more. This file acts as a central configuration hub 
 It acts as a map that connects specific URLs to corresponding views or actions within your Django application.
 
 5. `manage.py` is a command-line utility in Django that provides a convenient way to interact with various aspects of a Django project. 
-It is automatically created when you start a new Django project using the django-admin startproject 
+It is automatically created when you start a new Django project using the `django-admin startproject`
+
+Next: Run this command to create the app
+```Shell
+python3 manage.py startapp to_do
+```
+
