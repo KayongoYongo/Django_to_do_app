@@ -69,10 +69,22 @@ This will allow the django application to view any of the code we put in the app
 The app runs on sqlite 3. To install it, run this command `sudo apt install sqlite3`.
 
 # 6. Create and apply migrations.
+Creating and applying migrations in Django is a crucial aspect of managing database schema changes and keeping the database structure in sync with your code.
 
+```Bash
+python manage.py makemigrations
+python manage.py migrate
+```
 # 7. Create views for both the user and admin
+In the `views.py` file, the logic of actually adding tasks and displaying them will be handled by two functions. `def task_list(request):` and
+`def add_task(request):`.
 
-# 8. Create the templates.
+# 8. Confugure URL's
+In both the project and the app, configure the URLs in the `urls.py` file. The Configuring URLs in a Django project serves the purpose of mapping specific URLs 
+to corresponding views, allowing the web application to respond appropriately to different user requests. 
 
-# 9. Run the app
+# 9. Create the templates.
+In the apps folder, create a file called `templates`. There the form for displaying all tasks and adding new ones.
+
+# 10. Run the app
 Run the app using this command `python manage.py runserver`
