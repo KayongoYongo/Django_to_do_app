@@ -1,5 +1,10 @@
 # Django_to_do_app
-A simple to do app without sign up and log in
+A simple to do app without sign up and log in.
+
+In its current state, the application can only perform `CREATE` operations. I will continue to improve it so that it can handle,
+`UPDATE` and `DELETE` operations.
+
+Additionally, the UI needs some work.
 
 # 1. Getting started
 To get started, type this in the command line:
