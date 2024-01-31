@@ -7,7 +7,7 @@ def task_list(request):
     This function deals with rendering all tasks onto the html form
     """
     tasks = Task.objects.all()
-    return render(request, 'todo/task_list.html', {'tasks': tasks})
+    return render(request, 'todo_app/task_list.html', {'tasks': tasks})
 
 def add_task(request):
     """
@@ -18,4 +18,4 @@ def add_task(request):
         Task.objects.create(title=title)
         return redirect('task_list')
 
-    return render(request, 'todo/add_task.html')
+    return render(request, 'todo_app/add_task.html')
