@@ -3,3 +3,4 @@ backports.zoneinfo-0.2.1
 django-4.2.9
 sqlparse-0.4.4 
 typing-extensions-4.9.0
+sqlite-3.31.1

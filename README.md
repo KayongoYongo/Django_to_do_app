@@ -65,4 +65,14 @@ INSTALLED_APPS = [
 ```
 This will allow the django application to view any of the code we put in the app.
 
+# 5. Create a model
+The app runs on sqlite 3. To install it, run this command `sudo apt install sqlite3`.
 
+# 6. Create and apply migrations.
+
+# 7. Create views for both the user and admin
+
+# 8. Create the templates.
+
+# 9. Run the app
+Run the app using this command `python manage.py runserver`
