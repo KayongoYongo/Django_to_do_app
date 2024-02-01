@@ -9,11 +9,14 @@
     <h1>Task List</h1>
     <ul>
         {% for task in tasks %}
-            <li>{{ task.title }} - {{ task.completed }}</li>
+            <li>{{ task.title }} - Completed: {{ task.completed }}</li>
+            {% if task.id %}
+                <a href="{% url 'update_task' task.id %}">Update</a>
+            {% else %}
+                <span>No ID available for this task</span>
+            {% endif %}
         {% endfor %}
     </ul>
     <a href="{% url 'add_task' %}">Add Task</a>
-    <a href="{% url 'update_task' task.id %}">Update</a>
-    <a href="{% url 'delete_task' task.id %}">Delete</a>
 </body>
 </html>
