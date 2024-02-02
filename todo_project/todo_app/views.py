@@ -38,3 +38,15 @@ def update_task(request, task_id):
         return redirect('task_list')
     
     return render(request, 'todo_app/update_task.html', {'task': task})
+
+def delete_task(request, task_id):
+    """
+    Description: This dunction deletes tasks.
+
+    Args:
+        request
+        task_id
+    """
+    task = get_object_or_404(Task, id=task_id)
+    task.delete()
+    return redirect('task_list')
