@@ -91,3 +91,13 @@ In the apps folder, create a file called `templates`. There the form for display
 
 # 10. Run the app
 Run the app using this command `python manage.py runserver`
+
+# 11. Testing out the `GET` functionality
+In one terminal, run: `python3 manage.py run server`
+
+In another terminal run:
+```Bash
+vagrant@ubuntu-focal:~$ curl -X GET http://127.0.0.1:8000/ -w "\n"
+[{"title": "Submit my project"}, {"title": "Update my GitHub"}, {"title": "Review code"}, {"title": "Watch movies"}]
+```
+
