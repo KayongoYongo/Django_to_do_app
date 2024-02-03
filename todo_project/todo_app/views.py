@@ -1,13 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core import serializers
+from django.http import HttpResponse, JsonResponse
+import json
 from .models import Task
+
 
 # Create your views here
 def task_list(request):
     """
     This function deals with rendering all tasks onto the html form
     """
+
     tasks = Task.objects.all()
-    return render(request, 'todo_app/task_list.html', {'tasks': tasks})
+    # tasks_json = serializers.serialize('json', tasks)
+    tasks_json = [{'title': task.title} for task in tasks]
+    return JsonResponse(tasks_json, safe=False)
+    # return HttpResponse(tasks_json, content_type='application/json')
+    # return render(request, 'todo_app/task_list.html', {'tasks': tasks})
 
 def add_task(request):
     """
