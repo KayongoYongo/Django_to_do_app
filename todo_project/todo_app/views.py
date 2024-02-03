@@ -8,16 +8,23 @@ from .models import Task
 # Create your views here
 def task_list(request):
     """
-    This function deals with rendering all tasks onto the html form
+    This function returns all the tasks in JSON format.
     """
 
     tasks = Task.objects.all()
-    # tasks_json = serializers.serialize('json', tasks)
     tasks_json = [{'title': task.title} for task in tasks]
     return JsonResponse(tasks_json, safe=False)
-    # return HttpResponse(tasks_json, content_type='application/json')
-    # return render(request, 'todo_app/task_list.html', {'tasks': tasks})
 
+def find_task(request, task_id):
+    """
+    This function returns a single task in JSON format.
+    If the task is not found, it returns an error 404
+    """
+    
+    task = get_object_or_404(Task, id=task_id)
+    task_json = {'title': task.title}
+    return JsonResponse(tasks_json, safe=False)
+    
 def add_task(request):
     """
     This function deals with adding tasks to the database
