@@ -23,7 +23,7 @@ def find_task(request, task_id):
     
     task = get_object_or_404(Task, id=task_id)
     task_json = {'title': task.title}
-    return JsonResponse(tasks_json, safe=False)
+    return JsonResponse(task_json, safe=False)
     
 def add_task(request):
     """
