@@ -100,4 +100,14 @@ In another terminal run:
 vagrant@ubuntu-focal:~$ curl -X GET http://127.0.0.1:8000/ -w "\n"
 [{"title": "Submit my project"}, {"title": "Update my GitHub"}, {"title": "Review code"}, {"title": "Watch movies"}]
 ```
-
+# 12. Testing the find specific tasks functionality
+Same as above, but the bash command is diffrent:
+```Bash
+vagrant@ubuntu-focal:~$ curl -X GET http://127.0.0.1:8000/find_task/3 | jq .
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    30  100    30    0     0   2000      0 --:--:-- --:--:-- --:--:--  2000
+{
+  "title": "Submit my project"
+}
+```
