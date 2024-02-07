@@ -1,5 +1,5 @@
 # Django_to_do_app
-A simple to do app without sign up and log in.
+A simple to do app without sign up and login. Most of the functionality is done using `server side` rendering.
 
 In its current state, the application can perform `CRUD` operations. The templates are bare bones and wat is remaining is to
 impliment a simple base.html file.
@@ -91,23 +91,3 @@ In the apps folder, create a file called `templates`. There the form for display
 
 # 10. Run the app
 Run the app using this command `python manage.py runserver`
-
-# 11. Testing out the `GET` functionality
-In one terminal, run: `python3 manage.py run server`
-
-In another terminal run:
-```Bash
-vagrant@ubuntu-focal:~$ curl -X GET http://127.0.0.1:8000/ -w "\n"
-[{"title": "Submit my project"}, {"title": "Update my GitHub"}, {"title": "Review code"}, {"title": "Watch movies"}]
-```
-# 12. Testing the find specific tasks functionality
-Same as above, but the bash command is diffrent:
-```Bash
-vagrant@ubuntu-focal:~$ curl -X GET http://127.0.0.1:8000/find_task/3 | jq .
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100    30  100    30    0     0   2000      0 --:--:-- --:--:-- --:--:--  2000
-{
-  "title": "Submit my project"
-}
-```
