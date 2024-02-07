@@ -12,8 +12,7 @@ def task_list(request):
     """
 
     tasks = Task.objects.all()
-    tasks_json = [{'title': task.title} for task in tasks]
-    return JsonResponse(tasks_json, safe=False)
+    return render(request, 'task_list.html', {'tasks':tasks})
 
 def find_task(request, task_id):
     """
@@ -22,8 +21,7 @@ def find_task(request, task_id):
     """
     
     task = get_object_or_404(Task, id=task_id)
-    task_json = {'title': task.title}
-    return JsonResponse(task_json, safe=False)
+    return render(request, 'update_task.html', {'tasks':tasks})
     
 def add_task(request):
     """
