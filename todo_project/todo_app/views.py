@@ -12,7 +12,7 @@ def task_list(request):
     """
 
     tasks = Task.objects.all()
-    return render(request, 'task_list.html', {'tasks':tasks})
+    return render(request, 'todo_app/task_list.html', {'tasks':tasks})
 
 def find_task(request, task_id):
     """
@@ -21,7 +21,7 @@ def find_task(request, task_id):
     """
     
     tasks = get_object_or_404(Task, id=task_id)
-    return render(request, 'update_task.html', {'tasks':tasks})
+    return render(request, 'todo_app/update_task.html', {'tasks':tasks})
     
 def add_task(request):
     """
