@@ -20,7 +20,7 @@ def find_task(request, task_id):
     If the task is not found, it returns an error 404
     """
     
-    task = get_object_or_404(Task, id=task_id)
+    tasks = get_object_or_404(Task, id=task_id)
     return render(request, 'update_task.html', {'tasks':tasks})
     
 def add_task(request):
