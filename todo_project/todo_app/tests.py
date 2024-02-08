@@ -11,3 +11,7 @@ class TaskModelTestCase(TestCase):
     def test_create_task(self):
         self.assertEqual(self.task.title, "Test Task")
         self.assertFalse(self.task.completed)
+
+    def test_query_task(self):
+        queried_task = Task.objects.get(title="Test Task")
+        self.assertEqual(queried_task, self.task)
