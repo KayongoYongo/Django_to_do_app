@@ -91,3 +91,7 @@ In the apps folder, create a file called `templates`. There the form for display
 
 # 10. Run the app
 Run the app using this command `python manage.py runserver`
+
+# 11. Run Tests
+The application is lightweight, tests will be run by default from the `tests.py` file. To run the tests,
+type this command in the CLI `python3 manage.py test`.
